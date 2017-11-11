@@ -1,0 +1,12 @@
+I. router cho 5 page
+1. home (/)
+2. news (/news)
+3. news detail (/news/:id)
+4. video (videos)
+5. video detail (videos/:id)
+
+
+II. Tach components:
+1. Header
+2. Footer
+3. Homepage

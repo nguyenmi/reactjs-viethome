@@ -1,0 +1,73 @@
+import React from 'react';
+import axios from 'axios';
+
+
+class News extends React.Component{
+  constructor(props, context) {
+    super(props, context);
+    this.state ={
+      newshome: [
+        {
+          id: 1,
+          title: 'Khám phá điều thú vị ở khu "Hẻm trọ Tây" Sài Gòn',
+          img: 'img/tintuc.png',
+          cateOne: 'Tin Tức',
+          cateTwo: 'Tin Thế giới',
+          titleCateOne : 'Không có người việt trong vụ bắt giử con tim tai Sydny',
+          titleCateTwo : 'Lãnh đạo Hong Kong tuyên bố biểu tình chấm dứt',
+          imgOne: 'img/tintuc1.png',
+          imgTwo: 'img/tintuc11.png',
+        }
+      ]
+    };
+	}
+  render(){
+    let listnewhome = this.state.newshome && this.state.newshome.map(item => {
+      return (
+        <div className="news-content color-red" key = {item.id}>
+          <h3 className="title-cate color-red">Tin Tức</h3>
+          <div className="wh-cate">
+            <div className="item-cate" style={{'backgroundImage':`url(img/tintuc.png)`}}>
+              <a className="txt-link" href="#">
+                <img className="img-article" src="img/tintuc.png}"/>
+              </a>
+              <div className="caption fontW">
+                <p><a className="colorW" href="#">Tin tức 1</a></p>
+              </div>
+            </div>
+          </div>
+          <div className="content">
+            <div className="wh-content" style={{'backgroundImage':`url(img/tintuc1.png)`}}>
+              <a className="txt-link" href="#">
+                <img className="img-article" src="img/tintuc1.png"/>
+              </a>
+            </div>
+            <div className="nd-cate">
+              <p className="text-cate hv-red"><a className="hv-red" href="#">Cate1</a></p>
+              <h4 className="title-cates fs15"><a className="txt-link" href="#">noi dung ca te 1</a></h4>
+            </div>
+          </div>
+          <div className="content">
+            <div className="wh-content" style={{'backgroundImage':`url(img/content.png)`}}>
+              <a className="txt-link" href="#">
+                <img className="img-article" src="img/tintuc11.png"/>
+              </a>
+            </div>
+            <div className="nd-cate">
+              <p className="text-cate hv-blue"><a className="hv-blue" href="#">Cate 2</a></p>
+              <h4 className="title-cates fs15"><a className="txt-link" href="#">Noi dung cate 2</a></h4>
+            </div>
+          </div>
+        </div>
+      )
+    })
+    return (
+      <div >
+        {
+          listnewhome
+        }
+      </div>
+    )
+  }
+}
+module.exports = News;

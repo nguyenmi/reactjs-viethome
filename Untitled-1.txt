@@ -1,0 +1,46 @@
+GET, POST, PUT, PATCH, DELETE
+
+ajax
+
+$.ajax(
+    url: '/users?query=:id'
+    method: 'GET'
+)
+.done(res => {
+    console.log(res);
+})
+.fail(err => {
+    code: 404, 201, 401
+    mes: ''
+});
+
+
+$.ajax(
+    url: 'http://api.com'
+    method: 'POST',
+    data:{
+        username: '',
+        password: '',
+    }
+)
+.done(res => {
+    console.log(res);
+})
+.fail(err => {
+    code: 404, 201, 401
+    mes: ''
+});
+
+
+
+axios
+
+var instance = axios.create({
+  baseURL: 'https://some-domain.com/api/',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+});
+
+axios.get(
+    url: 'users'
+)
